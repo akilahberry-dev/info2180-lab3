@@ -33,6 +33,10 @@ document.addEventListener("DOMContentLoaded", function () {
     squares.forEach((div, index) => {
         div.classList.add("square")
         div.addEventListener("click", function () {
+            if (gameState[index] !== "") {
+                return;
+            }
+
             div.textContent = (currentPlayer);
             div.classList.add(currentPlayer);
             gameState[index] = (currentPlayer);
@@ -76,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     });
 
-    console.log(`Added "squares" class to ${squares.length}(s)`);
+    console.log(`Added "squares" class to 9 squares`);
 });
 
 

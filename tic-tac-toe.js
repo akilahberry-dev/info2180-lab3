@@ -18,7 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
 
             console.log(gameState);
         });
-      
+        div.addEventListener("mouseenter", function () {
+            div.classList.add("hover");
+    
+        });
+        div.addEventListener("mouseleave", function () {
+ 
+             div.classList.remove("hover")
+        });
+        
     });
     console.log(`Added "squares" class to ${squares.length}(s)`);
 });

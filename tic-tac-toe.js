@@ -36,7 +36,7 @@ document.addEventListener("DOMContentLoaded", function () {
             gameState[index] = (currentPlayer);
             const winner = checkWinner();
                 if (winner) {
-                    statusDiv.textContent= `Congratulations! X is the Winner!`;
+                    statusDiv.textContent= `Congratulations! ${winner} is the Winner!`;
                     statusDiv.classList.add("you-won");
                 } 
 

@@ -1,6 +1,8 @@
 document.addEventListener("DOMContentLoaded", function () {
     const squares = document.querySelectorAll("#board div");
     const statusDiv = document.getElementById("status");
+    const originalStatus = statusDiv.textContent;
+    const newGameBtn = document.querySelector(".btn");
     let currentPlayer = "X";
     const gameState = ["", "", "", "", "", "", "", "", ""];
     const winningCombos = [
@@ -50,7 +52,6 @@ document.addEventListener("DOMContentLoaded", function () {
             console.log(gameState);
         });
 
-
         div.addEventListener("mouseenter", function () {
             div.classList.add("hover");
     
@@ -61,6 +62,20 @@ document.addEventListener("DOMContentLoaded", function () {
         });
         
     });
+
+    newGameBtn.addEventListener("click", function () {
+            squares.forEach((div) => {
+            div.textContent = "";
+            div.classList.remove("X", "O");  
+            });
+
+            gameState.fill("");
+            currentPlayer = "X";
+            statusDiv.textContent= originalStatus;
+            statusDiv.classList.remove("you-won");
+
+    });
+
     console.log(`Added "squares" class to ${squares.length}(s)`);
 });
 
